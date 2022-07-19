@@ -7,7 +7,7 @@ from sqlalchemy.orm import Session
 from send_mail import send_email
 from fastapi import FastAPI, Depends, BackgroundTasks, HTTPException
 from database import get_db
-
+#h11==0.13.0
 
 rg = '^[a-z0-9]+[\._]?[a-z0-9]+[@]\w+[.]\w{2,3}$' 
 app = FastAPI(title='ASAlytics Waitlist')
