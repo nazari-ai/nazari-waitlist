@@ -277,7 +277,6 @@ def send_email(subject:str, email_to:str, username:str):
 	sender_email = os.getenv('sender_email')
 	to = email_to
 	password = os.getenv('password')
-	print(send_email, password)
 
 	# Create a multipart message and set headers
 	message = MIMEMultipart()
