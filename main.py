@@ -5,14 +5,22 @@ from json import load
 from database import SessionLocal, engine
 from sqlalchemy.orm import Session
 from send_mail import send_email
-from fastapi import FastAPI, Depends, BackgroundTasks, HTTPException
 from database import get_db
+from fastapi import FastAPI, Depends, BackgroundTasks, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
+
 
 rg = '^[a-z0-9]+[\._]?[a-z0-9]+[@]\w+[.]\w{2,3}$' 
 
 app = FastAPI(title='ASAlytics Waitlist')
 models.Base.metadata.create_all(bind=engine)
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
     
 def commit_user(db:Session, request: schemas.UserCreate):
     new_user= models.User(username= request.username, email= request.email)
