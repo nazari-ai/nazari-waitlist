@@ -5,7 +5,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.asyncio import AsyncSession
 
-SQLALCHEMY_DATABASE_URL= "postgresql://uovyxjmplmasat:1288339d5826bd87fc58414d15d03ada76d0247c96bf34234e2f18fb4e87e51e@ec2-34-235-31-124.compute-1.amazonaws.com:5432/dgsokp4o8nq2v"
+SQLALCHEMY_DATABASE_URL= "DATABASE_URL"
 
 engine = create_engine(
     SQLALCHEMY_DATABASE_URL
